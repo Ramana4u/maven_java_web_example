@@ -5,7 +5,16 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
-    - name: testing the githib cicd
+    - uses: action/checkout@v3
+    - name: java setup
+      uses: action/setup-java@v3
+      with:
+        java-version: '11'
+    - name: maven build
+      run: mvn --batch-mode --update-snapshots verify
+    - run: ls
+    - name: testing the GitHub cicd
       run: |
-        echo "this is my first pipeline"
+        echo "This is my first pipeline"
+    
    
