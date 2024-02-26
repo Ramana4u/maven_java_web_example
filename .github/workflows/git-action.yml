@@ -21,10 +21,11 @@ jobs:
       with:
         name: test.jar
         path: target
-      
-    - run: ls
-    - name: testing the GitHub cicd
-      run: |
-        echo "This is my first pipeline"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy stage
+      run: echo "deployment is success"
+  
     
    
