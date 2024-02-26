@@ -15,6 +15,11 @@ jobs:
   
     - name: maven build
       run: mvn clean install
+
+    - name: saving the build artifact
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: test.jar
       
     - run: ls
     - name: testing the GitHub cicd
